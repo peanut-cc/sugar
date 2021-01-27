@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+package errors;
+
+import "google/protobuf/any.proto";
+
+option cc_enable_arenas = true;
+option java_multiple_files = true;
+option java_outer_classname = "ErrorsProto";
+option java_package = "dev.sugar.errors";
+option objc_class_prefix = "SugarErrors";
+
+
+message Status {
+    int32 code = 1;
+
+    string reason = 2;
+
+    string message = 3;
+
+    repeated google.protobuf.Any details = 4;
+}
+
+
